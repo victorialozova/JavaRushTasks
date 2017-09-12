@@ -32,9 +32,15 @@ public class Solution {
             fr.read(arr, 0, 50);
             str+=String.valueOf(arr);
         }
-        String s = "world";
-        String[] w = str.toLowerCase().split(s);
-        count = w.length - 1;
+        String w1 = str.toLowerCase();
+
+        for (String x : w1.split("[^a-zA-Z0-9]"))
+        {
+            if (x.equals("world"))
+            {
+                count++;
+            }
+        }
         reader.close();
         fr.close();
         System.out.println(count);
